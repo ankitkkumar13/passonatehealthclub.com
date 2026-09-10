@@ -100,7 +100,7 @@
 
     .mobile-menu-btn {
       display: none; background: none; border: none; color: white;
-      font-size: 1.8rem; cursor: pointer;
+      font-size: 1.8rem; cursor: pointer; padding: 8px;
     }
 
     /* WHATSAPP */
@@ -113,7 +113,7 @@
     }
     .whatsapp-float:hover { transform: scale(1.1) translateY(-5px); background: #20b859; }
 
-    /* HERO CAROUSEL */
+    /* HERO */
     .hero { position: relative; height: 100vh; min-height: 600px; overflow: hidden; }
     .carousel { position: absolute; inset: 0; z-index: 0; }
     .carousel-slide {
@@ -129,7 +129,8 @@
 
     .hero-content {
       position: relative; z-index: 2; height: 100%;
-      display: flex; flex-direction: column; justify-content: center; max-width: 800px;
+      display: flex; flex-direction: column; justify-content: center;
+      max-width: 800px; padding: 40px 0;
     }
     .hero-badge {
       display: inline-block; background: rgba(212, 255, 63, 0.12);
@@ -284,6 +285,7 @@
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .plan-card.featured { transform: scale(1); }
     }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none; position: absolute; top: 80px; left: 0; right: 0;
@@ -293,18 +295,62 @@
       }
       .nav-links.active { display: flex; }
       .mobile-menu-btn { display: block; }
-      .hero { min-height: 80vh; }
-      .hero-content { text-align: center; }
-      .hero-badge { align-self: center; }
-      .hero p { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
+
+      .hero { min-height: 90vh; }
+      
+      /* STRONGER OVERLAY FOR MOBILE */
+      .carousel-slide::after {
+        background: linear-gradient(
+          180deg,
+          rgba(11, 13, 16, 0.85) 0%,
+          rgba(11, 13, 16, 0.75) 40%,
+          rgba(11, 13, 16, 0.95) 100%
+        ) !important;
+      }
+      
+      .hero-content {
+        text-align: center;
+        padding: 100px 16px 60px;
+        justify-content: center;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+      }
+      
+      .hero p {
+        font-size: 1rem;
+        margin: 0 auto 28px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+      }
+      
+      .hero-badge {
+        align-self: center;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+      }
+      
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+      
+      .hero-actions .btn {
+        width: 100%;
+        padding: 16px 24px;
+      }
+      
       section { padding: 70px 0; }
       .whatsapp-float { width: 56px; height: 56px; font-size: 2rem; bottom: 20px; right: 20px; }
     }
+
     @media (max-width: 480px) {
       .container { padding: 0 18px; }
-      .hero-actions .btn { width: 100%; }
       .about-stats { gap: 24px; }
+      .hero h1 { font-size: 1.75rem; }
     }
   </style>
 </head>
@@ -439,7 +485,6 @@
       </div>
       <div class="plans-grid">
 
-        <!-- Yearly 10000 -->
         <div class="plan-card featured">
           <div class="plan-name">Yearly Plan</div>
           <div class="plan-price">₹10,000<span>/year</span></div>
@@ -453,7 +498,6 @@
           <a href="https://wa.me/919953471708?text=Hi%2C%20I%27m%20interested%20in%20the%20Yearly%20plan!" class="btn btn-primary" target="_blank">Enquire Now</a>
         </div>
 
-        <!-- Monthly 1200 -->
         <div class="plan-card">
           <div class="plan-name">Basic Monthly</div>
           <div class="plan-price">₹1,200<span>/month</span></div>
@@ -467,7 +511,6 @@
           <a href="https://wa.me/919953471708?text=Hi%2C%20I%27m%20interested%20in%20the%20Basic%20Monthly%20plan!" class="btn btn-outline" target="_blank">Enquire</a>
         </div>
 
-        <!-- Monthly 1500 -->
         <div class="plan-card">
           <div class="plan-name">Pro Monthly</div>
           <div class="plan-price">₹1,500<span>/month</span></div>
@@ -581,7 +624,6 @@
         </div>
 
         <div class="map-container">
-          <!-- REAL Google Maps embed for Passionate Health Club -->
           <iframe 
             src="https://www.google.com/maps?q=Passionate+Health+Club+Unisex+Gym,+1413/13,+Govindpuri,+Kalkaji,+New+Delhi,+Delhi+110019&output=embed"
             allowfullscreen="" 
@@ -605,9 +647,98 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT -->
+  <!-- ========== JAVASCRIPT ========== -->
   <script>
-    (function() {
-      // Mobile menu toggle
-      const menuBtn = document.getElementById('menuBtn');
-     
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // ========== MOBILE MENU ==========
+      var menuBtn = document.getElementById('menuBtn');
+      var navLinks = document.getElementById('navLinks');
+
+      if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          navLinks.classList.toggle('active');
+          
+          var icon = menuBtn.querySelector('i');
+          if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+
+        // Close menu when a link is clicked
+        var links = navLinks.querySelectorAll('a');
+        for (var i = 0; i < links.length; i++) {
+          links[i].addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            var icon = menuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          });
+        }
+      }
+
+      // ========== CAROUSEL ==========
+      var slides = document.querySelectorAll('.carousel-slide');
+      var dotsContainer = document.getElementById('carouselDots');
+
+      if (slides.length > 0 && dotsContainer) {
+        var current = 0;
+        var totalSlides = slides.length;
+
+        // Create dots
+        for (var j = 0; j < totalSlides; j++) {
+          var dot = document.createElement('span');
+          if (j === 0) dot.classList.add('active');
+          dot.setAttribute('data-index', j);
+          dot.addEventListener('click', function() {
+            var index = parseInt(this.getAttribute('data-index'));
+            goToSlide(index);
+          });
+          dotsContainer.appendChild(dot);
+        }
+
+        var dots = dotsContainer.querySelectorAll('span');
+
+        function goToSlide(n) {
+          if (n === current) return;
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          current = n;
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+        }
+
+        // Auto slide every 4 seconds
+        setInterval(function() {
+          var next = (current + 1) % totalSlides;
+          goToSlide(next);
+        }, 4000);
+      }
+
+      // ========== SMOOTH SCROLL ==========
+      var anchors = document.querySelectorAll('a[href^="#"]');
+      for (var k = 0; k < anchors.length; k++) {
+        anchors[k].addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href === '#') return;
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
