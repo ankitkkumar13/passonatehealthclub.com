@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Passionate Health Club | Unisex Gym - Govindpuri, New Delhi</title>
+  <title>Passionate Health Club | Unisex Gym - Govindpuri, Kalkaji, New Delhi</title>
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2927/2927531.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
       --bg-card: #14181d;
       --bg-elevated: #1c2128;
       --accent: #d4ff3f;
-      --accent-glow: rgba(212, 255, 63, 0.15);
       --text-primary: #ffffff;
       --text-secondary: #a1a9b8;
       --text-muted: #6b7280;
@@ -83,9 +82,9 @@
       width: 44px; height: 44px; border-radius: 50%;
       background: var(--accent); padding: 6px; object-fit: contain;
     }
-    .logo { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; color: white; line-height: 1; }
+    .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: white; line-height: 1; }
     .logo span { color: var(--accent); }
-    .logo small { display: block; font-size: 0.6rem; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; }
+    .logo small { display: block; font-size: 0.58rem; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; margin-top: 2px; }
 
     .nav-links { display: flex; gap: 30px; align-items: center; list-style: none; }
     .nav-links a {
@@ -104,7 +103,7 @@
       font-size: 1.8rem; cursor: pointer;
     }
 
-    /* WHATSAPP FLOAT */
+    /* WHATSAPP */
     .whatsapp-float {
       position: fixed; bottom: 28px; right: 28px; background: #25D366;
       width: 62px; height: 62px; border-radius: 50%;
@@ -146,7 +145,6 @@
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
 
-    /* CAROUSEL DOTS */
     .carousel-dots {
       position: absolute; bottom: 30px; left: 50%;
       transform: translateX(-50%); z-index: 3; display: flex; gap: 10px;
@@ -172,7 +170,7 @@
       min-height: 400px; overflow: hidden; border: 1px solid var(--border-light);
       box-shadow: var(--shadow);
     }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; min-height: 400px; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; min-height: 400px; display: block; }
 
     /* SERVICES */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 26px; }
@@ -207,7 +205,7 @@
       padding: 6px 18px; border-radius: 60px;
     }
     .plan-name { font-size: 1.25rem; font-weight: 600; margin-bottom: 16px; color: var(--text-secondary); }
-    .plan-price { font-size: 2.8rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 8px; }
+    .plan-price { font-size: 2.6rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 8px; }
     .plan-price span { font-size: 0.95rem; font-weight: 400; color: var(--text-secondary); }
     .plan-features { list-style: none; margin: 28px 0; }
     .plan-features li {
@@ -218,7 +216,7 @@
     .plan-card .btn { width: 100%; padding: 14px; }
 
     /* TRAINERS */
-    .trainers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
+    .trainers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 700px; margin: 0 auto; }
     .trainer-card {
       background: var(--bg-card); border-radius: var(--radius-md);
       padding: 32px 24px; text-align: center; border: 1px solid var(--border-light);
@@ -229,16 +227,16 @@
       width: 100px; height: 100px; background: #1f262e;
       border-radius: 50%; margin: 0 auto 18px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 2.6rem; color: var(--accent);
+      font-size: 2.4rem; color: var(--accent);
       border: 2px solid rgba(212, 255, 63, 0.3);
     }
     .trainer-card h3 { font-size: 1.25rem; margin-bottom: 4px; }
     .trainer-card .specialty { color: var(--accent); font-weight: 500; font-size: 0.9rem; margin-bottom: 10px; }
-    .trainer-card .exp { color: var(--text-secondary); font-size: 0.9rem; }
+    .trainer-card .exp { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px; }
     .trainer-contact {
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      margin-top: 14px; color: var(--text-secondary); font-size: 0.9rem;
-      text-decoration: none;
+      margin-top: 8px; color: var(--text-secondary); font-size: 0.92rem;
+      text-decoration: none; transition: var(--transition);
     }
     .trainer-contact:hover { color: var(--accent); }
 
@@ -266,11 +264,12 @@
     }
     .contact-detail span { color: var(--text-secondary); }
     .contact-detail strong { color: white; font-weight: 600; }
+    .contact-detail a { color: var(--accent); text-decoration: none; }
     .map-container {
       background: var(--bg-card); border-radius: var(--radius-md);
-      overflow: hidden; border: 1px solid var(--border-light); min-height: 340px;
+      overflow: hidden; border: 1px solid var(--border-light); min-height: 400px;
     }
-    .map-container iframe { width: 100%; height: 100%; min-height: 340px; border: 0; }
+    .map-container iframe { width: 100%; height: 100%; min-height: 400px; border: 0; display: block; }
 
     /* FOOTER */
     footer {
@@ -339,7 +338,7 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- HERO WITH CAROUSEL -->
+  <!-- HERO CAROUSEL -->
   <section id="home" class="hero">
     <div class="carousel" id="carousel">
       <div class="carousel-slide active" style="background-image:url('images/gym1.jpeg');"></div>
@@ -440,10 +439,10 @@
       </div>
       <div class="plans-grid">
 
-        <!-- Yearly 1000 (Best Value) -->
+        <!-- Yearly 10000 -->
         <div class="plan-card featured">
-          <div class="plan-name">Yearly Saver</div>
-          <div class="plan-price">₹1,000<span>/year</span></div>
+          <div class="plan-name">Yearly Plan</div>
+          <div class="plan-price">₹10,000<span>/year</span></div>
           <ul class="plan-features">
             <li><i class="fas fa-check"></i> Gym floor access</li>
             <li><i class="fas fa-check"></i> Yoga classes</li>
@@ -559,7 +558,8 @@
             <i class="fas fa-phone-alt"></i>
             <div>
               <strong>Phone / WhatsApp</strong><br>
-              <span>+91 99534 71708<br>+91 73031 70932</span>
+              <a href="tel:+919953471708">+91 99534 71708</a><br>
+              <a href="tel:+917303170932">+91 73031 70932</a>
             </div>
           </div>
 
@@ -575,8 +575,39 @@
             <i class="fab fa-whatsapp"></i>
             <div>
               <strong>WhatsApp Enquiry</strong><br>
-              <a href="https://wa.me/919953471708" target="_blank" style="color: var(--accent); text-decoration: none;">
+              <a href="https://wa.me/919953471708" target="_blank">Chat with us</a>
+            </div>
+          </div>
+        </div>
 
+        <div class="map-container">
+          <!-- REAL Google Maps embed for Passionate Health Club -->
+          <iframe 
+            src="https://www.google.com/maps?q=Passionate+Health+Club+Unisex+Gym,+1413/13,+Govindpuri,+Kalkaji,+New+Delhi,+Delhi+110019&output=embed"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <a href="#" class="logo-wrap">
+        <img class="logo-img" src="https://cdn-icons-png.flaticon.com/512/2927/2927531.png" alt="Logo">
+        <div class="logo">PASSIONATE<span>.</span></div>
+      </a>
+      <p style="margin-bottom: 8px;">Unisex Gym · Govindpuri, Kalkaji, New Delhi</p>
+      <p>&copy; 2026 Passionate Health Club. All rights reserved.</p>
+    </div>
+  </footer>
 
-                
+  <!-- JAVASCRIPT -->
+  <script>
+    (function() {
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+     
