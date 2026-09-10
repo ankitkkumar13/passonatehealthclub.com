@@ -3,25 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Passionate Health Club | Premium Gym</title>
-  <!-- Google Fonts & Font Awesome for modern icons -->
+  <title>Passionate Health Club | Unisex Gym - Govindpuri, New Delhi</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2927/2927531.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ---------- RESET & VARIABLES ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --bg-dark: #0b0d10;
       --bg-card: #14181d;
       --bg-elevated: #1c2128;
-      --accent: #d4ff3f;      /* vibrant premium lime */
+      --accent: #d4ff3f;
       --accent-glow: rgba(212, 255, 63, 0.15);
       --text-primary: #ffffff;
       --text-secondary: #a1a9b8;
@@ -35,9 +30,7 @@
       --transition: all 0.25s ease;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--bg-dark);
@@ -47,691 +40,284 @@
       overflow-x: hidden;
     }
 
-    /* ---------- TYPOGRAPHY & UTILS ---------- */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
-    h1, h2, h3 {
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      line-height: 1.1;
-      font-weight: 800;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 1rem;
-    }
+    h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.1; font-weight: 800; }
+    h2 { font-size: clamp(1.8rem, 4.5vw, 2.75rem); margin-bottom: 1rem; }
 
     .section-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      display: inline-block;
-      border-left: 3px solid var(--accent);
-      padding-left: 12px;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px;
+      color: var(--accent); font-weight: 600; margin-bottom: 0.75rem;
+      display: inline-block; border-left: 3px solid var(--accent); padding-left: 12px;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 34px;
-      border-radius: 60px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      cursor: pointer;
-      border: none;
-      font-size: 1rem;
-      font-family: var(--font);
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 34px; border-radius: 60px; font-weight: 600;
+      text-decoration: none; transition: var(--transition); cursor: pointer;
+      border: none; font-size: 1rem; font-family: var(--font);
     }
-
     .btn-primary {
-      background: var(--accent);
-      color: #0b0d10;
+      background: var(--accent); color: #0b0d10;
       box-shadow: 0 10px 25px -8px rgba(212, 255, 63, 0.5);
     }
-
-    .btn-primary:hover {
-      background: #c2e834;
-      transform: translateY(-3px);
-      box-shadow: 0 18px 30px -8px rgba(212, 255, 63, 0.7);
-    }
-
+    .btn-primary:hover { background: #c2e834; transform: translateY(-3px); }
     .btn-outline {
-      background: transparent;
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
-      color: white;
+      background: transparent; border: 1.5px solid rgba(255, 255, 255, 0.25); color: white;
     }
+    .btn-outline:hover { border-color: var(--accent); background: rgba(212, 255, 63, 0.05); transform: translateY(-3px); }
 
-    .btn-outline:hover {
-      border-color: var(--accent);
-      background: rgba(212, 255, 63, 0.05);
-      transform: translateY(-3px);
-    }
-
-    /* ---------- HEADER / NAV ---------- */
+    /* NAVBAR */
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(11, 13, 16, 0.8);
-      border-bottom: 1px solid var(--border-light);
-      padding: 0 24px;
+      position: sticky; top: 0; z-index: 1000;
+      backdrop-filter: blur(14px); background: rgba(11, 13, 16, 0.85);
+      border-bottom: 1px solid var(--border-light); padding: 0 24px;
     }
-
     .nav-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
+      max-width: 1280px; margin: 0 auto; display: flex;
+      justify-content: space-between; align-items: center; height: 80px;
     }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.6rem;
-      letter-spacing: -0.02em;
-      color: white;
+    .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-img {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); padding: 6px; object-fit: contain;
     }
+    .logo { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; color: white; line-height: 1; }
+    .logo span { color: var(--accent); }
+    .logo small { display: block; font-size: 0.6rem; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; }
 
-    .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 34px;
-      align-items: center;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 30px; align-items: center; list-style: none; }
     .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      position: relative;
+      text-decoration: none; color: var(--text-secondary); font-weight: 500;
+      font-size: 0.92rem; transition: var(--transition); position: relative;
     }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
+    .nav-links a:hover { color: white; }
     .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: var(--transition);
+      content: ''; position: absolute; bottom: -6px; left: 0;
+      width: 0; height: 2px; background: var(--accent); transition: var(--transition);
     }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+    .nav-links a:hover::after { width: 100%; }
 
     .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
+      display: none; background: none; border: none; color: white;
+      font-size: 1.8rem; cursor: pointer;
     }
 
-    /* ---------- WHATSAPP FLOATING BUTTON ---------- */
+    /* WHATSAPP FLOAT */
     .whatsapp-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: #25D366;
-      color: #0b0d10;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      box-shadow: 0 15px 30px -8px rgba(37, 211, 102, 0.5);
-      transition: var(--transition);
-      z-index: 999;
-      text-decoration: none;
-      color: white;
+      position: fixed; bottom: 28px; right: 28px; background: #25D366;
+      width: 62px; height: 62px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; box-shadow: 0 15px 30px -8px rgba(37, 211, 102, 0.5);
+      transition: var(--transition); z-index: 999; text-decoration: none; color: white;
     }
+    .whatsapp-float:hover { transform: scale(1.1) translateY(-5px); background: #20b859; }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1) translateY(-5px);
-      background: #20b859;
-      box-shadow: 0 22px 35px -8px #25D366;
+    /* HERO CAROUSEL */
+    .hero { position: relative; height: 100vh; min-height: 600px; overflow: hidden; }
+    .carousel { position: absolute; inset: 0; z-index: 0; }
+    .carousel-slide {
+      position: absolute; inset: 0; opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      background-size: cover; background-position: center;
     }
-
-    /* ---------- HERO SECTION ---------- */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding: 60px 0 40px;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(212, 255, 63, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 0;
+    .carousel-slide.active { opacity: 1; }
+    .carousel-slide::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(11,13,16,0.92) 0%, rgba(11,13,16,0.6) 50%, rgba(11,13,16,0.85) 100%);
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
+      position: relative; z-index: 2; height: 100%;
+      display: flex; flex-direction: column; justify-content: center; max-width: 800px;
     }
-
     .hero-badge {
-      display: inline-block;
-      background: rgba(212, 255, 63, 0.12);
-      color: var(--accent);
-      padding: 6px 18px;
-      border-radius: 60px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 28px;
-      border: 1px solid rgba(212, 255, 63, 0.2);
+      display: inline-block; background: rgba(212, 255, 63, 0.12);
+      color: var(--accent); padding: 6px 18px; border-radius: 60px;
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 24px;
+      border: 1px solid rgba(212, 255, 63, 0.2); align-self: flex-start;
     }
-
-    .hero h1 {
-      margin-bottom: 24px;
-    }
-
-    .hero h1 .highlight {
-      color: var(--accent);
-      position: relative;
-    }
-
+    .hero h1 { margin-bottom: 20px; }
+    .hero h1 .highlight { color: var(--accent); }
     .hero p {
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin-bottom: 40px;
+      font-size: 1.15rem; color: var(--text-secondary);
+      max-width: 600px; margin-bottom: 36px;
     }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
+    /* CAROUSEL DOTS */
+    .carousel-dots {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3; display: flex; gap: 10px;
     }
-
-    /* ---------- SECTIONS GENERAL ---------- */
-    section {
-      padding: 100px 0;
-      position: relative;
+    .carousel-dots span {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,0.3); cursor: pointer;
+      transition: var(--transition);
     }
+    .carousel-dots span.active { background: var(--accent); width: 30px; border-radius: 6px; }
 
-    .section-header {
-      margin-bottom: 56px;
-    }
+    section { padding: 100px 0; position: relative; }
+    .section-header { margin-bottom: 56px; }
 
-    /* ---------- ABOUT ---------- */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-text p {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      margin-bottom: 24px;
-    }
-
-    .about-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .stat-item h4 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-    }
-
-    .stat-item p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 0;
-    }
-
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text p { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 20px; }
+    .about-stats { display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
+    .stat-item h4 { font-size: 2.3rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-item p { color: var(--text-secondary); font-size: 0.9rem; margin: 0; }
     .about-image {
-      background: var(--bg-card);
-      border-radius: var(--radius-lg);
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border-light);
-      position: relative;
-      overflow: hidden;
+      background: var(--bg-card); border-radius: var(--radius-lg);
+      min-height: 400px; overflow: hidden; border: 1px solid var(--border-light);
       box-shadow: var(--shadow);
     }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; min-height: 400px; }
 
-    .about-image i {
-      font-size: 8rem;
-      color: rgba(212, 255, 63, 0.2);
-    }
-
-    /* ---------- SERVICES ---------- */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-    }
-
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 26px; }
     .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      padding: 36px 28px;
-      transition: var(--transition);
+      background: var(--bg-card); border: 1px solid var(--border-light);
+      border-radius: var(--radius-md); padding: 36px 28px; transition: var(--transition);
     }
-
     .service-card:hover {
-      transform: translateY(-10px);
-      border-color: rgba(212, 255, 63, 0.3);
+      transform: translateY(-10px); border-color: rgba(212, 255, 63, 0.3);
       background: var(--bg-elevated);
-      box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.8);
     }
+    .service-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: 22px; }
+    .service-card h3 { font-size: 1.35rem; margin-bottom: 10px; }
+    .service-card p { color: var(--text-secondary); font-size: 0.98rem; }
 
-    .service-icon {
-      font-size: 2.4rem;
-      color: var(--accent);
-      margin-bottom: 24px;
-    }
-
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-    }
-
-    /* ---------- MEMBERSHIP PLANS ---------- */
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-    }
-
+    /* PLANS */
+    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
     .plan-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      padding: 40px 30px;
-      transition: var(--transition);
-      text-align: center;
-      position: relative;
+      background: var(--bg-card); border: 1px solid var(--border-light);
+      border-radius: var(--radius-md); padding: 40px 30px; text-align: center;
+      transition: var(--transition); position: relative;
     }
-
     .plan-card.featured {
       border: 2px solid var(--accent);
       background: linear-gradient(145deg, #14181d, #1a1f1c);
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
-
     .plan-card.featured::before {
-      content: 'POPULAR';
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: #0b0d10;
-      font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      padding: 6px 18px;
-      border-radius: 60px;
+      content: 'BEST VALUE'; position: absolute; top: -14px; left: 50%;
+      transform: translateX(-50%); background: var(--accent); color: #0b0d10;
+      font-weight: 700; font-size: 0.7rem; letter-spacing: 2px;
+      padding: 6px 18px; border-radius: 60px;
     }
-
-    .plan-name {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 18px;
-      color: var(--text-secondary);
-    }
-
-    .plan-price {
-      font-size: 3.4rem;
-      font-weight: 800;
-      color: white;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .plan-price span {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text-secondary);
-    }
-
-    .plan-features {
-      list-style: none;
-      margin: 32px 0;
-    }
-
+    .plan-name { font-size: 1.25rem; font-weight: 600; margin-bottom: 16px; color: var(--text-secondary); }
+    .plan-price { font-size: 2.8rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 8px; }
+    .plan-price span { font-size: 0.95rem; font-weight: 400; color: var(--text-secondary); }
+    .plan-features { list-style: none; margin: 28px 0; }
     .plan-features li {
-      padding: 10px 0;
-      color: var(--text-secondary);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      font-size: 0.98rem;
+      padding: 10px 0; color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04); font-size: 0.95rem;
     }
+    .plan-features li i { color: var(--accent); margin-right: 12px; width: 18px; }
+    .plan-card .btn { width: 100%; padding: 14px; }
 
-    .plan-features li i {
-      color: var(--accent);
-      margin-right: 12px;
-      width: 18px;
-    }
-
-    .plan-card .btn {
-      width: 100%;
-      padding: 14px;
-    }
-
-    /* ---------- TRAINERS ---------- */
-    .trainers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-    }
-
+    /* TRAINERS */
+    .trainers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
     .trainer-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      padding: 32px 20px;
-      text-align: center;
-      border: 1px solid var(--border-light);
+      background: var(--bg-card); border-radius: var(--radius-md);
+      padding: 32px 24px; text-align: center; border: 1px solid var(--border-light);
       transition: var(--transition);
     }
-
-    .trainer-card:hover {
-      border-color: rgba(212, 255, 63, 0.25);
-      transform: translateY(-6px);
-    }
-
+    .trainer-card:hover { border-color: rgba(212, 255, 63, 0.25); transform: translateY(-6px); }
     .trainer-avatar {
-      width: 110px;
-      height: 110px;
-      background: #1f262e;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: var(--accent);
+      width: 100px; height: 100px; background: #1f262e;
+      border-radius: 50%; margin: 0 auto 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.6rem; color: var(--accent);
       border: 2px solid rgba(212, 255, 63, 0.3);
     }
-
-    .trainer-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 4px;
+    .trainer-card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+    .trainer-card .specialty { color: var(--accent); font-weight: 500; font-size: 0.9rem; margin-bottom: 10px; }
+    .trainer-card .exp { color: var(--text-secondary); font-size: 0.9rem; }
+    .trainer-contact {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 14px; color: var(--text-secondary); font-size: 0.9rem;
+      text-decoration: none;
     }
+    .trainer-contact:hover { color: var(--accent); }
 
-    .trainer-card .specialty {
-      color: var(--accent);
-      font-weight: 500;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    .trainer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .trainer-socials a {
-      color: var(--text-muted);
-      transition: var(--transition);
-      font-size: 1.1rem;
-    }
-
-    .trainer-socials a:hover {
-      color: var(--accent);
-    }
-
-    /* ---------- GALLERY ---------- */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
-    }
-
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     .gallery-item {
-      background: var(--bg-card);
-      border-radius: var(--radius-sm);
-      aspect-ratio: 1 / 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm); overflow: hidden;
+      aspect-ratio: 1 / 1; border: 1px solid var(--border-light);
       transition: var(--transition);
-      color: rgba(212, 255, 63, 0.4);
-      font-size: 3.5rem;
     }
-
-    .gallery-item:hover {
-      background: var(--bg-elevated);
-      color: var(--accent);
-      transform: scale(1.02);
-      border-color: rgba(212, 255, 63, 0.3);
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: var(--transition); display: block;
     }
+    .gallery-item:hover img { transform: scale(1.08); }
 
-    /* ---------- CONTACT & MAP ---------- */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-info p {
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-      font-size: 1.1rem;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+    .contact-info > p { color: var(--text-secondary); margin-bottom: 28px; font-size: 1.05rem; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 22px; }
     .contact-detail i {
-      width: 48px;
-      height: 48px;
-      background: rgba(212, 255, 63, 0.08);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.3rem;
+      width: 48px; height: 48px; min-width: 48px; background: rgba(212, 255, 63, 0.08);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1.2rem;
     }
-
-    .contact-detail span {
-      color: var(--text-secondary);
-    }
-
-    .contact-detail strong {
-      color: white;
-      font-weight: 600;
-    }
-
+    .contact-detail span { color: var(--text-secondary); }
+    .contact-detail strong { color: white; font-weight: 600; }
     .map-container {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--border-light);
-      min-height: 340px;
-      height: 100%;
+      background: var(--bg-card); border-radius: var(--radius-md);
+      overflow: hidden; border: 1px solid var(--border-light); min-height: 340px;
     }
+    .map-container iframe { width: 100%; height: 100%; min-height: 340px; border: 0; }
 
-    .map-container iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 340px;
-      border: 0;
-      filter: grayscale(0.9) contrast(1.1);
-    }
-
-    /* ---------- FOOTER ---------- */
+    /* FOOTER */
     footer {
-      padding: 50px 0 30px;
-      border-top: 1px solid var(--border-light);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      padding: 50px 0 30px; border-top: 1px solid var(--border-light);
+      text-align: center; color: var(--text-muted); font-size: 0.9rem;
     }
+    footer .logo-wrap { justify-content: center; margin-bottom: 16px; }
+    footer .logo { color: white; }
 
-    footer .logo {
-      margin-bottom: 18px;
-      display: inline-block;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .about-image {
-        min-height: 280px;
-      }
-
-      .plan-card.featured {
-        transform: scale(1);
-      }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .plan-card.featured { transform: scale(1); }
     }
-
     @media (max-width: 768px) {
       .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: rgba(11, 13, 16, 0.98);
-        backdrop-filter: blur(14px);
-        flex-direction: column;
-        padding: 32px 24px;
-        gap: 24px;
+        display: none; position: absolute; top: 80px; left: 0; right: 0;
+        background: rgba(11, 13, 16, 0.98); backdrop-filter: blur(14px);
+        flex-direction: column; padding: 32px 24px; gap: 22px;
         border-bottom: 1px solid var(--border-light);
       }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .hero {
-        min-height: 70vh;
-        text-align: center;
-      }
-
-      .hero-content {
-        margin: 0 auto;
-      }
-
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-actions {
-        justify-content: center;
-      }
-
-      section {
-        padding: 70px 0;
-      }
-
-      .about-stats {
-        justify-content: center;
-      }
-
-      .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        font-size: 2rem;
-        bottom: 20px;
-        right: 20px;
-      }
+      .nav-links.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+      .hero { min-height: 80vh; }
+      .hero-content { text-align: center; }
+      .hero-badge { align-self: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      section { padding: 70px 0; }
+      .whatsapp-float { width: 56px; height: 56px; font-size: 2rem; bottom: 20px; right: 20px; }
     }
-
     @media (max-width: 480px) {
-      .container {
-        padding: 0 18px;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .about-stats {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .stat-item {
-        text-align: center;
-      }
+      .container { padding: 0 18px; }
+      .hero-actions .btn { width: 100%; }
+      .about-stats { gap: 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ========== NAVBAR ========== -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">PASSIONATE<span>.</span></a>
+      <a href="#" class="logo-wrap">
+        <img class="logo-img" src="https://cdn-icons-png.flaticon.com/512/2927/2927531.png" alt="Passionate Health Club Logo">
+        <div class="logo">PASSIONATE<span>.</span><small>HEALTH CLUB</small></div>
+      </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -747,28 +333,40 @@
     </div>
   </nav>
 
-  <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
-  <a href="https://wa.me/919876543210?text=Hi%20Passionate%20Health%20Club%2C%20I%27d%20like%20to%20know%20more%20about%20membership!" 
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/919953471708?text=Hi%20Passionate%20Health%20Club%2C%20I%27d%20like%20to%20know%20more%20about%20membership!" 
      class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp Enquiry">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- ========== HERO / HOME ========== -->
+  <!-- HERO WITH CAROUSEL -->
   <section id="home" class="hero">
-    <div class="container">
+    <div class="carousel" id="carousel">
+      <div class="carousel-slide active" style="background-image:url('images/gym1.jpg');"></div>
+      <div class="carousel-slide" style="background-image:url('images/gym2.jpg');"></div>
+      <div class="carousel-slide" style="background-image:url('images/gym3.jpg');"></div>
+      <div class="carousel-slide" style="background-image:url('images/gym4.jpg');"></div>
+      <div class="carousel-slide" style="background-image:url('images/gym5.jpg');"></div>
+      <div class="carousel-slide" style="background-image:url('images/gym6.jpg');"></div>
+      <div class="carousel-slide" style="background-image:url('images/gym7.jpg');"></div>
+    </div>
+
+    <div class="container" style="position:relative; z-index:2; height:100%;">
       <div class="hero-content">
-        <div class="hero-badge"><i class="fas fa-bolt"></i> Premium fitness destination</div>
-        <h1>Where <span class="highlight">passion</span> meets <br>performance.</h1>
-        <p>Modern equipment, elite trainers, and a community that pushes you beyond limits. Your transformation starts here.</p>
+        <div class="hero-badge"><i class="fas fa-map-marker-alt"></i> Govindpuri, Kalkaji · New Delhi</div>
+        <h1>Where <span class="highlight">passion</span> meets performance.</h1>
+        <p>Modern equipment, expert trainers, and a unisex-friendly community in the heart of South Delhi. Your transformation starts here.</p>
         <div class="hero-actions">
           <a href="#plans" class="btn btn-primary"><i class="fas fa-dumbbell"></i> View Membership</a>
           <a href="#contact" class="btn btn-outline"><i class="fas fa-map-pin"></i> Visit Us</a>
         </div>
       </div>
     </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
   </section>
 
-  <!-- ========== ABOUT ========== -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="section-header">
@@ -777,31 +375,31 @@
       </div>
       <div class="about-grid">
         <div class="about-text">
-          <p>Passionate Health Club is more than a gym — it's a high-performance training ground. We combine cutting-edge equipment, expert coaching, and an motivating atmosphere to help you unlock your full potential.</p>
-          <p>Whether you're a beginner or a seasoned athlete, our premium facility is designed to support every step of your journey.</p>
+          <p>Passionate Health Club is a premium <strong>unisex gym in Govindpuri, Kalkaji</strong> — designed for serious training. We combine modern equipment, certified coaching, and a motivating atmosphere to help you unlock your full potential.</p>
+          <p>Open all days from <strong>5:30 AM to 10:30 PM</strong>, we welcome beginners and athletes alike with flexible membership plans.</p>
           <div class="about-stats">
             <div class="stat-item">
               <h4>500+</h4>
               <p>Active members</p>
             </div>
             <div class="stat-item">
-              <h4>12+</h4>
-              <p>Expert trainers</p>
+              <h4>10+</h4>
+              <p>Years experience</p>
             </div>
             <div class="stat-item">
-              <h4>24/7</h4>
-              <p>Access hours</p>
+              <h4>7</h4>
+              <p>Days open</p>
             </div>
           </div>
         </div>
         <div class="about-image">
-          <i class="fas fa-dumbbell"></i>
+          <img src="images/gym6.jpg" alt="Passionate Health Club gym floor">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== SERVICES ========== -->
+  <!-- SERVICES -->
   <section id="services">
     <div class="container">
       <div class="section-header">
@@ -812,79 +410,83 @@
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
           <h3>Strength Training</h3>
-          <p>Premium free weights, power racks, and plate-loaded machines for serious lifters.</p>
+          <p>Free weights, plate-loaded machines, and power racks for serious lifters.</p>
         </div>
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
           <h3>Cardio Zone</h3>
-          <p>Latest treadmills, ellipticals, and assault bikes with immersive entertainment.</p>
+          <p>Treadmills, ellipticals, spin bikes, and cross trainers with AC comfort.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-users"></i></div>
-          <h3>Group Classes</h3>
-          <p>HIIT, yoga, spin, and functional training led by certified instructors.</p>
+          <div class="service-icon"><i class="fas fa-spa"></i></div>
+          <h3>Yoga Classes</h3>
+          <p>Guided yoga sessions by certified trainer with 3+ years experience.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-user-check"></i></div>
-          <h3>Personal Training</h3>
-          <p>One-on-one coaching tailored to your goals, schedule, and fitness level.</p>
+          <div class="service-icon"><i class="fas fa-apple-alt"></i></div>
+          <h3>Custom Diet Plan</h3>
+          <p>Personalised nutrition plans to fuel your fitness goals effectively.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== MEMBERSHIP PLANS ========== -->
+  <!-- PLANS -->
   <section id="plans">
     <div class="container">
       <div class="section-header">
         <div class="section-title">Membership</div>
-        <h2>Choose your plan.</h2>
+        <h2>Simple, honest pricing.</h2>
       </div>
       <div class="plans-grid">
-        <!-- Basic -->
-        <div class="plan-card">
-          <div class="plan-name">Basic</div>
-          <div class="plan-price">₹1,499<span>/mo</span></div>
+
+        <!-- Yearly 1000 (Best Value) -->
+        <div class="plan-card featured">
+          <div class="plan-name">Yearly Saver</div>
+          <div class="plan-price">₹1,000<span>/year</span></div>
           <ul class="plan-features">
             <li><i class="fas fa-check"></i> Gym floor access</li>
-            <li><i class="fas fa-check"></i> Cardio & strength zones</li>
+            <li><i class="fas fa-check"></i> Yoga classes</li>
+            <li><i class="fas fa-check"></i> Cardio zone</li>
             <li><i class="fas fa-check"></i> Locker & shower</li>
-            <li><i class="fas fa-times" style="color:#4b5563"></i> Group classes</li>
-            <li><i class="fas fa-times" style="color:#4b5563"></i> Personal training</li>
+            <li><i class="fas fa-check"></i> Customized diet plan</li>
           </ul>
-          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20the%20Basic%20plan!" class="btn btn-outline" target="_blank">Enquire</a>
+          <a href="https://wa.me/919953471708?text=Hi%2C%20I%27m%20interested%20in%20the%20Yearly%20plan!" class="btn btn-primary" target="_blank">Enquire Now</a>
         </div>
-        <!-- Pro (featured) -->
-        <div class="plan-card featured">
-          <div class="plan-name">Pro</div>
-          <div class="plan-price">₹2,499<span>/mo</span></div>
-          <ul class="plan-features">
-            <li><i class="fas fa-check"></i> Everything in Basic</li>
-            <li><i class="fas fa-check"></i> All group classes</li>
-            <li><i class="fas fa-check"></i> 1 PT session / month</li>
-            <li><i class="fas fa-check"></i> Guest pass (1)</li>
-            <li><i class="fas fa-check"></i> Nutrition guide</li>
-          </ul>
-          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20the%20Pro%20plan!" class="btn btn-primary" target="_blank">Enquire</a>
-        </div>
-        <!-- Elite -->
+
+        <!-- Monthly 1200 -->
         <div class="plan-card">
-          <div class="plan-name">Elite</div>
-          <div class="plan-price">₹3,999<span>/mo</span></div>
+          <div class="plan-name">Basic Monthly</div>
+          <div class="plan-price">₹1,200<span>/month</span></div>
           <ul class="plan-features">
-            <li><i class="fas fa-check"></i> Everything in Pro</li>
-            <li><i class="fas fa-check"></i> 4 PT sessions / month</li>
-            <li><i class="fas fa-check"></i> Custom diet plan</li>
-            <li><i class="fas fa-check"></i> Recovery zone access</li>
-            <li><i class="fas fa-check"></i> Priority booking</li>
+            <li><i class="fas fa-check"></i> Gym floor access</li>
+            <li><i class="fas fa-check"></i> Yoga classes</li>
+            <li><i class="fas fa-check"></i> Locker & shower</li>
+            <li><i class="fas fa-times" style="color:#4b5563"></i> Cardio zone</li>
+            <li><i class="fas fa-times" style="color:#4b5563"></i> Diet plan</li>
           </ul>
-          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20the%20Elite%20plan!" class="btn btn-outline" target="_blank">Enquire</a>
+          <a href="https://wa.me/919953471708?text=Hi%2C%20I%27m%20interested%20in%20the%20Basic%20Monthly%20plan!" class="btn btn-outline" target="_blank">Enquire</a>
         </div>
+
+        <!-- Monthly 1500 -->
+        <div class="plan-card">
+          <div class="plan-name">Pro Monthly</div>
+          <div class="plan-price">₹1,500<span>/month</span></div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Gym floor access</li>
+            <li><i class="fas fa-check"></i> Yoga classes</li>
+            <li><i class="fas fa-check"></i> Cardio zone</li>
+            <li><i class="fas fa-check"></i> Customized diet plan</li>
+            <li><i class="fas fa-check"></i> Locker & shower</li>
+          </ul>
+          <a href="https://wa.me/919953471708?text=Hi%2C%20I%27m%20interested%20in%20the%20Pro%20Monthly%20plan!" class="btn btn-outline" target="_blank">Enquire</a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ========== TRAINERS ========== -->
+  <!-- TRAINERS -->
   <section id="trainers">
     <div class="container">
       <div class="section-header">
@@ -892,55 +494,29 @@
         <h2>Meet your trainers.</h2>
       </div>
       <div class="trainers-grid">
+
         <div class="trainer-card">
-          <div class="trainer-avatar"><i class="fas fa-user-circle"></i></div>
-          <h3>Arjun Mehta</h3>
-          <div class="specialty">Strength & Conditioning</div>
-          <p style="color: var(--text-secondary); font-size:0.9rem;">8+ years experience, certified by ACE & K11.</p>
-          <div class="trainer-socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
+          <div class="trainer-avatar"><i class="fas fa-dumbbell"></i></div>
+          <h3>Arjun Verma</h3>
+          <div class="specialty">Strength Trainer</div>
+          <p class="exp">10+ years of experience in strength training & conditioning.</p>
+          <a href="tel:+919953471708" class="trainer-contact"><i class="fas fa-phone-alt"></i> 99534 71708</a>
+          <a href="tel:+917303170932" class="trainer-contact"><i class="fas fa-phone-alt"></i> 73031 70932</a>
         </div>
+
         <div class="trainer-card">
-          <div class="trainer-avatar"><i class="fas fa-user-circle"></i></div>
-          <h3>Priya Sharma</h3>
-          <div class="specialty">Yoga & Functional</div>
-          <p style="color: var(--text-secondary); font-size:0.9rem;">Certified RYT-500, specialist in mobility & mind-body.</p>
-          <div class="trainer-socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
+          <div class="trainer-avatar"><i class="fas fa-spa"></i></div>
+          <h3>Prem Verma</h3>
+          <div class="specialty">Yoga Trainer</div>
+          <p class="exp">3+ years of experience in yoga & flexibility training.</p>
+          <a href="tel:+919953471708" class="trainer-contact"><i class="fas fa-phone-alt"></i> 99534 71708</a>
         </div>
-        <div class="trainer-card">
-          <div class="trainer-avatar"><i class="fas fa-user-circle"></i></div>
-          <h3>Rahul Verma</h3>
-          <div class="specialty">HIIT & CrossFit</div>
-          <p style="color: var(--text-secondary); font-size:0.9rem;">CrossFit L2 coach, former national athlete.</p>
-          <div class="trainer-socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        <div class="trainer-card">
-          <div class="trainer-avatar"><i class="fas fa-user-circle"></i></div>
-          <h3>Neha Kapoor</h3>
-          <div class="specialty">Nutrition & Wellness</div>
-          <p style="color: var(--text-secondary); font-size:0.9rem;">Sports nutritionist, helping members fuel better.</p>
-          <div class="trainer-socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ========== GALLERY ========== -->
+  <!-- GALLERY -->
   <section id="gallery">
     <div class="container">
       <div class="section-header">
@@ -948,19 +524,19 @@
         <h2>Gym gallery.</h2>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item"><i class="fas fa-dumbbell"></i></div>
-        <div class="gallery-item"><i class="fas fa-bicycle"></i></div>
-        <div class="gallery-item"><i class="fas fa-heartbeat"></i></div>
-        <div class="gallery-item"><i class="fas fa-weight-hanging"></i></div>
-        <div class="gallery-item"><i class="fas fa-running"></i></div>
-        <div class="gallery-item"><i class="fas fa-spa"></i></div>
-        <div class="gallery-item"><i class="fas fa-boxing-glove"></i></div>
-        <div class="gallery-item"><i class="fas fa-user-friends"></i></div>
+        <div class="gallery-item"><img src="images/gym1.jpg" alt="Gym floor"></div>
+        <div class="gallery-item"><img src="images/gym2.jpg" alt="Cardio area"></div>
+        <div class="gallery-item"><img src="images/gym3.jpg" alt="Treadmill zone"></div>
+        <div class="gallery-item"><img src="images/gym4.jpg" alt="Equipment row"></div>
+        <div class="gallery-item"><img src="images/gym5.jpg" alt="Dumbbell area"></div>
+        <div class="gallery-item"><img src="images/gym6.jpg" alt="Wide gym shot"></div>
+        <div class="gallery-item"><img src="images/gym7.jpg" alt="Bench press zone"></div>
+        <div class="gallery-item"><img src="images/gym2.jpg" alt="Gym interior"></div>
       </div>
     </div>
   </section>
 
-  <!-- ========== CONTACT + MAP ========== -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="section-header">
@@ -970,175 +546,33 @@
       <div class="contact-grid">
         <div class="contact-info">
           <p>Ready to start? Drop by for a tour or send us a WhatsApp message — we're here to help.</p>
+
           <div class="contact-detail">
             <i class="fas fa-map-marker-alt"></i>
             <div>
               <strong>Address</strong><br>
-              <span>123 Fitness Street, Bandra West, Mumbai 400050</span>
+              <span>1413/13, Govindpuri, Kalkaji,<br>New Delhi, Delhi 110019</span>
             </div>
           </div>
+
           <div class="contact-detail">
             <i class="fas fa-phone-alt"></i>
             <div>
-              <strong>Phone</strong><br>
-              <span>+91 98765 43210</span>
+              <strong>Phone / WhatsApp</strong><br>
+              <span>+91 99534 71708<br>+91 73031 70932</span>
             </div>
           </div>
-          <div class="contact-detail">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <strong>Email</strong><br>
-              <span>hello@passionatehealth.club</span>
-            </div>
-          </div>
+
           <div class="contact-detail">
             <i class="fas fa-clock"></i>
             <div>
               <strong>Hours</strong><br>
-              <span>Mon–Sat: 5:00 AM – 11:00 PM | Sun: 6:00 AM – 9:00 PM</span>
+              <span>Open all days: 5:30 AM – 10:30 PM</span>
             </div>
           </div>
-        </div>
-        <div class="map-container">
-          <!-- Google Maps embed (static, no API key required) -->
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.715!2d72.826!3d19.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzM2LjAiTiA3MsKwNDknMzMuNiJF!5e0!3m2!1sen!2sin!4v1700000000000" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="container">
-      <div class="logo">PASSIONATE<span>.</span></div>
-      <p style="margin-bottom: 8px;">Premium health club · Mumbai</p>
-      <p>&copy; 2025 Passionate Health Club. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- ========== JAVASCRIPT ========== -->
-  <script>
-    (function() {
-      // Mobile menu toggle
-      const menuBtn = document.getElementById('menuBtn');
-      const navLinks = document.getElementById('navLinks');
-
-      if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          navLinks.classList.toggle('active');
-          // change icon
-          const icon = menuBtn.querySelector('i');
-          if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-
-        // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = menuBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          });
-        });
-
-        // Close menu on outside click
-        document.addEventListener('click', function(event) {
-          if (!navLinks.contains(event.target) && !menuBtn.contains(event.target)) {
-            navLinks.classList.remove('active');
-            const icon = menuBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      }
-
-      // Smooth scroll for anchor links (fallback for browsers not supporting CSS smooth)
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href === '#') return;
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-            // update URL without jumping
-            history.pushState(null, null, href);
-          }
-        });
-      });
-
-      // Simple stat counter animation for premium feel (optional)
-      const statNumbers = document.querySelectorAll('.stat-item h4');
-      if (statNumbers.length > 0) {
-        const animateValue = (el, start, end, duration) => {
-          let startTimestamp = null;
-          const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            const current = Math.floor(progress * (end - start) + start);
-            // Preserve suffix like '+' or '24/7'
-            const originalText = el.dataset.original || el.innerText;
-            if (originalText.includes('500')) {
-              el.innerText = current + '+';
-            } else if (originalText.includes('12')) {
-              el.innerText = current + '+';
-            } else if (originalText.includes('24')) {
-              el.innerText = '24/7';
-            } else {
-              el.innerText = current;
-            }
-            if (progress < 1) {
-              window.requestAnimationFrame(step);
-            } else {
-              // ensure final exact text
-              el.innerText = originalText;
-            }
-          };
-          window.requestAnimationFrame(step);
-        };
-
-        // Store original text and trigger on intersection
-        statNumbers.forEach(el => {
-          el.dataset.original = el.innerText;
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const el = entry.target;
-              const original = el.dataset.original;
-              let targetNumber = parseInt(original);
-              if (original.includes('24')) {
-                el.innerText = '24/7';
-                observer.unobserve(el);
-                return;
-              }
-              if (!isNaN(targetNumber)) {
-                animateValue(el, 0, targetNumber, 1200);
-              }
-              observer.unobserve(el);
-            }
-          });
-        }, { threshold: 0.5 });
-
-        statNumbers.forEach(el => observer.observe(el));
-      }
-    })();
-  </script>
-</body>
-</html>
+          <div class="contact-detail">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp Enquiry</strong><br>
+              <a href="https://wa.me/919953471708" target="_blank" style="color: var(--accent); text-decoration: none;">
