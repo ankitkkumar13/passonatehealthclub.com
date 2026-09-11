@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ankitkkumar13.github.io/passonatehealthclub.com/sitemap.xml
